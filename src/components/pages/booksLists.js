@@ -4,6 +4,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {getBooks} from '../../actions/booksActions' 
+import { Button } from 'reactstrap';
 
 class BooksList extends React.Component{
 	componentDidMount(){
@@ -17,6 +18,7 @@ class BooksList extends React.Component{
 				<h3>{book.title}</h3>
 				<p>{book.desc}</p>
 				<p>{book.price}</p>
+				<Button color="danger">Danger!</Button>
 			</div>
 		)
 		return (
