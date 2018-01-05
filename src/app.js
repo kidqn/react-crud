@@ -16,6 +16,7 @@ import {postBooks, deleteBooks, updateBooks} from './actions/booksActions';
 import reducers from './reducers/index';
 
 import BooksList from './components/pages/booksLists';
+
 //STEP 1 create the store
 const middleware = applyMiddleware(logger);
 const store = createStore(reducers, middleware);

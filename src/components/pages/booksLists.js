@@ -3,8 +3,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
+//import ACTION 
 import {getBooks} from '../../actions/booksActions' 
-import { Button } from 'reactstrap';
+
+//import GRID
+import { Grid, Row, Col, Button } from 'reactstrap';
+
+//import component
+import BookItem from './BookItem';
+import BookForm from './bookForm';
 
 class BooksList extends React.Component{
 	componentDidMount(){
@@ -14,17 +21,24 @@ class BooksList extends React.Component{
 
 	render(){
 		const booksList = this.props.books.map((book) =>  
-			<div key={book.id}>
-				<h3>{book.title}</h3>
-				<p>{book.desc}</p>
-				<p>{book.price}</p>
-				<Button color="danger">Danger!</Button>
-			</div>
+			<Col xs={12} sm={6} md={4} key={book.id}>
+				<BookItem 
+				title = {book.title}
+				description = {book.desc}
+				price = {book.price}
+				/>
+			</Col>
 		)
 		return (
 			<div>
 				<h1>Hello this is app REACT CRUD</h1>
-				{booksList}
+
+				<Col>
+					<BookForm />
+				</Col>
+				<Row>
+					{booksList}
+				</Row>
 			</div>
 		)
 	}
