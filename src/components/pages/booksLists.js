@@ -12,7 +12,7 @@ import { Grid, Row, Col, Button } from 'reactstrap';
 //import component
 import BookItem from './BookItem';
 import BookForm from './bookForm';
-
+import Cart from './cart';
 class BooksList extends React.Component{
 	componentDidMount(){
 		//dispatch an action
@@ -22,7 +22,8 @@ class BooksList extends React.Component{
 	render(){
 		const booksList = this.props.books.map((book) =>  
 			<Col xs={12} sm={6} md={4} key={book.id}>
-				<BookItem 
+				<BookItem
+				id = {book.id} 
 				title = {book.title}
 				description = {book.desc}
 				price = {book.price}
@@ -32,7 +33,9 @@ class BooksList extends React.Component{
 		return (
 			<div>
 				<h1>Hello this is app REACT CRUD</h1>
-
+				<Col>
+					<Cart />
+				</Col>
 				<Col>
 					<BookForm />
 				</Col>

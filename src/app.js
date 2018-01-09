@@ -69,6 +69,6 @@ store.dispatch(updateBooks(
 ))
 
 // -->> CART ACTION <<--
-store.dispatch(addToCart([{id: 2}]))
+//store.dispatch(addToCart([{id: 2}]))
 
 
